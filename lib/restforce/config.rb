@@ -114,6 +114,9 @@ module Restforce
     # Set this to true if you're authenticating with a Sandbox instance.
     # Defaults to false.
     option :host, default: lambda { ENV['SALESFORCE_HOST'] || 'login.salesforce.com' }
+    
+    # This can be used when using a customer community with a path prefix
+    option :url_prefix, default: lambda { ENV['SALESFORCE_PATH_PREFIX'] }
 
     option :oauth_token
     option :refresh_token

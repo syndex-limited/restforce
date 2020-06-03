@@ -23,7 +23,7 @@ module Restforce
           {
             iss: @options[:client_id],
             sub: @options[:username],
-            aud: @options[:host],
+            aud: "https://#{@options[:host]}#{@options[:url_prefix]}",
             iat: Time.now.utc.to_i,
             exp: Time.now.utc.to_i + 180
           }

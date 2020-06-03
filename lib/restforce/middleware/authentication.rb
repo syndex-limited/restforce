@@ -21,7 +21,7 @@ module Restforce
 
     # Internal: Performs the authentication and returns the response body.
     def authenticate!
-      response = connection.post '/services/oauth2/token' do |req|
+      response = connection.post "#{@options[:url_prefix]}/services/oauth2/token" do |req|
         req.body = encode_www_form(params)
       end
 
